@@ -1,0 +1,26 @@
+{
+  "name": "kaigpt-backend",
+  "version": "0.1.0",
+  "description": "backend of kaigpt",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/linoxolus/kaigpt"
+  },
+  "keywords": [
+    "chat",
+    "chatbot",
+    "bot",
+    "gpt",
+    "ai",
+    "generative"
+  ],
+  "author": "linoxolus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

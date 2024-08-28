@@ -1,0 +1,24 @@
+{
+  "name": "kaigpt",
+  "version": "0.1.0",
+  "description": "kaigpt gpt chat bot chatbot ai generative",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/linoxolus/kaigpt"
+  },
+  "keywords": [
+    "kaigpt",
+    "gpt",
+    "chat",
+    "bot",
+    "chatbot",
+    "ai",
+    "generative"
+  ],
+  "author": "linoxolus",
+  "license": "ISC"
+}
