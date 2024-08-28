@@ -1,0 +1,38 @@
+.wrapper {
+    height: 100%;
+    width: var(--dock-with);
+    display: flex;
+    align-items: center;
+}
+
+.dock-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    gap: 20px;
+}
+
+.dock-item {
+    --size: calc(var(--dock-with) - (12px * 2));
+    border-radius: 12px;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-color);
+
+    &.active {
+        color: var(--base-text-color);
+        background-color: var(--blur-background);
+    }
+
+    span {
+        margin-top: 6px;
+        font-size: 1.2rem;
+    }
+}

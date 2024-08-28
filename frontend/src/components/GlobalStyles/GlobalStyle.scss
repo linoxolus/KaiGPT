@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap');
+@import 'normalize.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6b8afd;
+    --base-background: #131313;
+    --background: #2e333d;
+    --blur-background: #2e333d33;
+    --base-text-color: #ffffff;
+    --text-color: #a9aeba;
+    --dock-with: 80px;
+    --sidebar-width: 280px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Archivo', sans-serif;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    color: var(--base-text-color);
+}
+
+// Webkit scrollbar (chrome, chromium, safari, not-firefox browser, ...)
+::-webkit-scrollbar {
+    width: 4px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bdbdbd80;
+    border-radius: 1000px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6e6e6e;
+}
+
+// main css
+
+[tabindex] {
+    outline: none;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+}
+
+button {
+    color: var(--base-text-color);
+    background-color: transparent;
+}
+
+[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
