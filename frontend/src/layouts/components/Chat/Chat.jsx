@@ -1,16 +1,23 @@
-import { faMicrophone, faPaperclip } from '@fortawesome/free-solid-svg-icons';
+import {
+    faMicrophone,
+    faPaperclip,
+    faPaperPlane,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
+import { useState } from 'react';
+import messageAPI from '~/API/mocks';
 import Button from '~/components/Button';
 import Message from '~/components/Message';
 import config from '~/config';
 import styles from './Chat.module.scss';
-import messageAPI from '~/API/mocks';
 
 const cx = classNames.bind(styles);
 const data = messageAPI.conversation[12340].messages;
 
 function Chat() {
+    const [messageValue, setMessageValue] = useState('');
+
     return (
         <div className={cx('wrapper')}>
             <header className={cx('header')}>
@@ -32,13 +39,34 @@ function Chat() {
             </header>
             <div className={cx('container')}>
                 {data.map((item, index) => {
-                    return <Message data={item} key={item.id}/>
+                    return <Message data={item} key={item.id} />;
                 })}
             </div>
             <footer className={cx('footer')}>
-                <FontAwesomeIcon icon={faPaperclip} className={cx('icon')} />
-                <input type="text" name="message" placeholder="Your message" />
-                <FontAwesomeIcon icon={faMicrophone} className={cx('icon')} />
+                <Button
+                    leftIcon={<FontAwesomeIcon icon={faPaperclip} />}
+                    className={cx('icon')}
+                    noText
+                />
+                <input
+                    type="text"
+                    name="message"
+                    placeholder="Your message"
+                    value={messageValue}
+                    onChange={(e) => setMessageValue(e.target.value)}
+                />
+                {messageValue ? (
+                    <Button
+                        leftIcon={<FontAwesomeIcon icon={faPaperPlane} />}
+                        className={cx('icon')}
+                        noText
+                    ></Button>
+                ) : (
+                    <FontAwesomeIcon
+                        icon={faMicrophone}
+                        className={cx('icon')}
+                    />
+                )}
             </footer>
         </div>
     );

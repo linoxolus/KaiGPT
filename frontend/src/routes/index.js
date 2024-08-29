@@ -1,5 +1,6 @@
 import config from '~/config';
 import Chat from '~/layouts/components/Chat';
+import ChatLayout from '~/layouts/ChatLayout';
 
 const publicRoutes = [
     {
@@ -8,7 +9,8 @@ const publicRoutes = [
     },
     {
         path: config.routes.chat,
-        component: <Chat/>,
+        component: <Chat />,
+        layout: ChatLayout,
     },
     {
         path: config.routes.tts,

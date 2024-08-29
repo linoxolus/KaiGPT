@@ -6,7 +6,7 @@
     border-radius: 4px;
     cursor: pointer;
     user-select: none;
-    background-color: var(--btn-background);
+    background-color: transparent;
     border: 2px solid transparent;
     display: block;
     display: flex;
@@ -25,11 +25,20 @@
     &.noText {
         min-width: unset;
         padding: unset;
+        border: none;
+        font-size: unset;
+    }
+}
+
+.noText {
+    .icon {
+        width: unset;
     }
 }
 
 .icon {
     width: 20px;
+    display: flex;
 }
 
 .icon + .title, .title + .icon {
