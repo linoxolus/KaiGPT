@@ -3,7 +3,6 @@ const routes = {
     chat: '/chat',
     tts: '/tts',
     whisper: '/whisper',
-    clock: '/clock',
     account: '/account',
     settings: '/settings',
 }

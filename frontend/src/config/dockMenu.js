@@ -1,15 +1,20 @@
 import {
-    faClock,
     faFileAudio,
     faGear,
+    faHome,
     faMessage,
     faMicrophone,
-    faUser
+    faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import routes from './routes';
 
 const dockMenu = [
+    {
+        title: 'Home',
+        icon: <FontAwesomeIcon icon={faHome} />,
+        to: routes.home,
+    },
     {
         title: 'Chat',
         icon: <FontAwesomeIcon icon={faMessage} />,
@@ -24,11 +29,6 @@ const dockMenu = [
         title: 'Whisper',
         icon: <FontAwesomeIcon icon={faMicrophone} />,
         to: routes.whisper,
-    },
-    {
-        title: 'Clock',
-        icon: <FontAwesomeIcon icon={faClock} />,
-        to: routes.clock,
     },
     {
         title: 'Account',

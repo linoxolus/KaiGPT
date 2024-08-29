@@ -8,6 +8,10 @@ const publicRoutes = [
         component: '',
     },
     {
+        path: config.routes.home,
+        component: '',
+    },
+    {
         path: config.routes.chat,
         component: <Chat />,
         layout: ChatLayout,
@@ -18,10 +22,6 @@ const publicRoutes = [
     },
     {
         path: config.routes.whisper,
-        component: '',
-    },
-    {
-        path: config.routes.clock,
         component: '',
     },
     {
