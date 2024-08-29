@@ -83,6 +83,53 @@ const messageAPI = {
             },
         },
     ],
+    conversation: {
+        12340: {
+            messages: [
+                {
+                    id: 'msg1',
+                    username: 'user123',
+                    text: 'Hello, how are you?',
+                    timestamp: '2024-08-01T10:00:00Z',
+                },
+                {
+                    id: 'msg2',
+                    username: 'user456',
+                    text: "I'm good, thanks!",
+                    timestamp: '2024-08-01T10:01:00Z',
+                },
+                {
+                    id: 'msg3',
+                    username: 'user123',
+                    text: "Yah",
+                    timestamp: '2024-08-01T10:01:00Z',
+                },
+                {
+                    id: 'msg4',
+                    username: 'user123',
+                    text: "Yah",
+                    timestamp: '2024-08-01T10:01:00Z',
+                },
+                {
+                    id: 'msg5',
+                    username: 'user123',
+                    text: "Yah",
+                    timestamp: '2024-08-01T10:01:00Z',
+                },
+                {
+                    id: 'msg6',
+                    username: 'user123',
+                    text: "Yah",
+                    timestamp: '2024-08-01T10:01:00Z',
+                },
+            ],
+            pagination: {
+                page: 1,
+                pageSize: 20,
+                totalMessages: 200,
+            },
+        },
+    },
     pagination: {
         page: 1,
         pageSize: 20,

@@ -1,5 +1,4 @@
 .wrapper {
-    --image-size: 50px;
     border-radius: calc(var(--base-rounded-corner) + var(--padding-size));
     padding: var(--padding-size);
     display: flex;
@@ -16,8 +15,8 @@
 }
 
 .image {
-    width: var(--image-size);
-    height: var(--image-size);
+    width: var(--avatar-size);
+    height: var(--avatar-size);
     overflow: hidden;
     border-radius: var(--base-rounded-corner);
     background-color: var(--base-text-color);
@@ -29,7 +28,7 @@
 }
 
 .info {
-    width: calc(100% - var(--image-size));
+    width: calc(100% - var(--avatar-size));
     display: flex;
     flex-direction: column;
     justify-content: center;

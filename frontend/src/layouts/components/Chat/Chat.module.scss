@@ -56,6 +56,8 @@
 }
 
 .container {
+    max-height: 100%;
+    overflow-y: auto;
 }
 
 .footer {
@@ -63,7 +65,8 @@
     display: flex;
     justify-content: space-between;
     color: var(--text-color);
-
+    padding: var(--padding-size);
+    
     input {
         width: 100%;
         background-color: var(--background);

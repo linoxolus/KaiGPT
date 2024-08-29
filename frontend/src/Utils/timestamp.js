@@ -2,7 +2,7 @@ function getFomatLastTime(time) {
     if (typeof time === 'string') {
         time = Date.parse(time);
     }
-    const currentTime = Date.parse(new Date().toISOString());
+    const currentTime = Date.now();
     const lastTime = currentTime - time;
     let result, num;
 
@@ -24,7 +24,7 @@ function getFomatLastTime(time) {
         num = Math.floor(lastTime / 86400000);
         num = String(num).padStart(2, '0');
         result = `${num} d`;
-    } else if (lastTime < 1209600000) {
+    } else if (lastTime < 172800000) {
         result = `Yesterday`;
     } else if (lastTime < 2419200000) {
         num = Math.floor(lastTime / 604800000);
@@ -42,4 +42,38 @@ function getFomatLastTime(time) {
     return result;
 }
 
-export default getFomatLastTime;
+function getMessageTime(time) {
+    const currentTime = Date.now();
+    const currentYear = new Date().getFullYear();
+    const lastTime = currentTime - time;
+    time = new Date(time);
+    let hours = String(time.getHours()).padStart(2, '0');
+    let minutes = String(time.getMinutes()).padStart(2, '0');
+    let date = String(time.getDate()).padStart(2, '0');
+    let month = String(time.getMonth() + 1).padStart(2, '0');
+    let year = String(time.getFullYear()).padStart(2, '0');
+    let result, num;
+
+    if (currentYear !== time.getFullYear()) {
+        result = `${date}/${month}/${year}`;
+    } else if (lastTime < 60000) {
+        num = Math.floor(lastTime / 1000);
+        num = String(num).padStart(2, '0');
+        result = `${num} s`;
+    } else if (lastTime < 3600000) {
+        num = Math.floor(lastTime / 60000);
+        num = String(num).padStart(2, '0');
+        result = `${num} m`;
+    } else if (lastTime < 86400000) {
+        result = `${hours}:${minutes}`;
+    } else if (lastTime < 172800000) {
+        result = `Yesterday`;
+    } else if (lastTime >= 172800000) {
+        result = `${date}/${month}`;
+    } else {
+        throw new Error('Something went wrong with time format');
+    }
+    return result;
+}
+
+export {getFomatLastTime, getMessageTime};

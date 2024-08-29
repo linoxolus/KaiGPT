@@ -1,8 +1,8 @@
 import { faThumbTack } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import Image from '~/components/Images/Images';
-import getFomatLastTime from '~/Utils/timestamp';
+import Image from '~/components/Image/Image';
+import { getFomatLastTime } from '~/Utils/timestamp';
 import styles from './Conversation.module.scss';
 
 const cx = classNames.bind(styles);

@@ -1,11 +1,14 @@
 import { faMicrophone, faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
+import Button from '~/components/Button';
+import Message from '~/components/Message';
 import config from '~/config';
 import styles from './Chat.module.scss';
-import Button from '~/components/Button';
+import messageAPI from '~/API/mocks';
 
 const cx = classNames.bind(styles);
+const data = messageAPI.conversation[12340].messages;
 
 function Chat() {
     return (
@@ -27,7 +30,11 @@ function Chat() {
                     })}
                 </div>
             </header>
-            <div className={cx('container')}></div>
+            <div className={cx('container')}>
+                {data.map((item, index) => {
+                    return <Message data={item} key={item.id}/>
+                })}
+            </div>
             <footer className={cx('footer')}>
                 <FontAwesomeIcon icon={faPaperclip} className={cx('icon')} />
                 <input type="text" name="message" placeholder="Your message" />
