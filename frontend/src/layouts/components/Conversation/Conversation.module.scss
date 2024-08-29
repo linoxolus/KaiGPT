@@ -4,6 +4,7 @@
     padding: var(--padding-size);
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     &.active {
         background-color: var(--active-background);

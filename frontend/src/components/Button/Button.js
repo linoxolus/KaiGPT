@@ -10,6 +10,7 @@ function Button({
     children,
     primary,
     outline,
+    noText = false,
     text = false,
     disabled = false,
     rounded = false,
@@ -53,6 +54,7 @@ function Button({
         rounded,
         small,
         large,
+        noText,
         [className]: className,
     });
 

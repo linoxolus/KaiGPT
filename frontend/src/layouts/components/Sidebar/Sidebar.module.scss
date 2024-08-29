@@ -10,5 +10,5 @@
 
 .conversations {
     margin-top: calc(var(--base-padding-size) * 2);
-    overflow-y: scroll;
+    overflow-y: auto;
 }

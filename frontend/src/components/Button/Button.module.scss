@@ -21,6 +21,11 @@
         pointer-events: none;
         opacity: 0.5;
     }
+
+    &.noText {
+        min-width: unset;
+        padding: unset;
+    }
 }
 
 .icon {
