@@ -1,6 +1,6 @@
 .wrapper {
     height: 100%;
-    width: var(--dock-with);
+    width: var(--dock-width);
     display: flex;
     align-items: center;
 }
@@ -15,7 +15,7 @@
 }
 
 .dock-item {
-    --size: calc(var(--dock-with) - (12px * 2));
+    --size: calc(var(--dock-width) - (12px * 2));
     border-radius: 12px;
     width: var(--size);
     height: var(--size);
@@ -26,6 +26,9 @@
     font-size: 2rem;
     color: var(--text-color);
 
+    &:hover {
+        background-color: var(--hover-background);
+    }
     &.active {
         color: var(--base-text-color);
         background-color: var(--blur-background);
@@ -34,5 +37,6 @@
     span {
         margin-top: 6px;
         font-size: 1.2rem;
+        font-weight: 700;
     }
 }

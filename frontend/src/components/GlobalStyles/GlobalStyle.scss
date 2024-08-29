@@ -10,12 +10,19 @@
 :root {
     --primary: #6b8afd;
     --base-background: #131313;
-    --background: #2e333d;
-    --blur-background: #2e333d33;
+    --background: #202329;
+    --active-background: #2e333d;
+    --blur-background: #2e333d66;
+    --hover-background: #2e333d33;
     --base-text-color: #ffffff;
     --text-color: #a9aeba;
-    --dock-with: 80px;
+    
+    --dock-width: 80px;
     --sidebar-width: 280px;
+
+    --base-padding-size: 12px;
+    --padding-size: 10px;
+    --base-rounded-corner: 12px;
 }
 
 html {

@@ -1,0 +1,14 @@
+.wrapper {
+    width: var(--sidebar-width);
+    height: 100vh;
+    overflow: hidden;
+    padding: var(--base-padding-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.conversations {
+    margin-top: calc(var(--base-padding-size) * 2);
+    overflow-y: scroll;
+}

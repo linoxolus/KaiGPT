@@ -1,0 +1,99 @@
+.wrapper {
+    --image-size: 50px;
+    border-radius: calc(var(--base-rounded-corner) + var(--padding-size));
+    padding: var(--padding-size);
+    display: flex;
+    align-items: center;
+
+    &.active {
+        background-color: var(--active-background);
+    }
+
+    &:hover {
+        background-color: var(--hover-background);
+    }
+}
+
+.image {
+    width: var(--image-size);
+    height: var(--image-size);
+    overflow: hidden;
+    border-radius: var(--base-rounded-corner);
+    background-color: var(--base-text-color);
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.info {
+    width: calc(100% - var(--image-size));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding-left: var(--padding-size);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 1.4rem;
+    margin-right: 12px;
+}
+
+.data {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.content {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+
+    .data {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 1.4rem;
+    }
+
+    .badge {
+        --size: 18px;
+        width: var(--size);
+        height: var(--size);
+        background-color: var(--primary);
+        color: var(--base-text-color);
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        line-height: 1;
+    }
+}
