@@ -8,7 +8,7 @@ import config from '~/config';
 const cx = classNames.bind(styles);
 
 function Dockbar() {
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeTab, setActiveTab] = useState(1);
 
     return (
         <div className={cx('wrapper')}>

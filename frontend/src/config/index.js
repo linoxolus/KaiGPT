@@ -1,11 +1,13 @@
-import dockMenu from './dockMenu';
-import routes from './routes';
 import chatMenu from './chatMenu';
+import dockMenu from './dockMenu';
+import infoBar from './infoBar';
+import routes from './routes';
 
 const config = {
     routes,
     dockMenu,
-    chatMenu
+    chatMenu,
+    infoBar,
 };
 
 export default config;

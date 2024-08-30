@@ -5,11 +5,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import messageAPI from '~/API/mocks';
 import Button from '~/components/Button';
 import Message from '~/components/Message';
 import config from '~/config';
+import { ChatContext } from '~/layouts/ChatLayout/ChatLayout';
 import styles from './Chat.module.scss';
 
 const cx = classNames.bind(styles);
@@ -17,6 +18,7 @@ const data = messageAPI.conversation[12340].messages;
 
 function Chat() {
     const [messageValue, setMessageValue] = useState('');
+    const [setIsSidebarOpen] = useContext(ChatContext);
 
     return (
         <div className={cx('wrapper')}>
@@ -28,9 +30,9 @@ function Chat() {
                     </div>
                 </div>
                 <div className={cx('control')}>
-                    {config.chatMenu.map((chat, index) => {
+                    {config.chatMenu(setIsSidebarOpen).map((chat, index) => {
                         return (
-                            <Button key={index} className={cx('icon')} noText>
+                            <Button key={index} className={cx('icon')} onClick={chat.onClick} noText>
                                 {chat.icon}
                             </Button>
                         );

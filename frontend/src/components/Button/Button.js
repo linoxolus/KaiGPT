@@ -16,6 +16,7 @@ function Button({
     rounded = false,
     small = false,
     large = false,
+    noCss = false,
     className,
     onClick,
     leftIcon,
@@ -55,6 +56,7 @@ function Button({
         small,
         large,
         noText,
+        css: !noCss,
         [className]: className,
     });
 

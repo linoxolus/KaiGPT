@@ -1,4 +1,4 @@
-.wrapper {
+.wrapper.css {
     font-size: 1.6rem;
     font-weight: 700;
     min-width: 100px;
@@ -30,24 +30,25 @@
     }
 }
 
-.noText {
+.css .noText {
     .icon {
         width: unset;
     }
 }
 
-.icon {
+.css .icon {
     width: 20px;
     display: flex;
 }
 
-.icon + .title, .title + .icon {
+.css .icon + .title,
+.css .title + .icon {
     margin-left: 4px;
 }
 
 // Button types
 
-.rounded {
+.css .rounded {
     border-radius: 1000px;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
     border: 1px solid var(--black);
@@ -57,7 +58,7 @@
     }
 }
 
-.primary {
+.css .primary {
     background-color: var(--primary);
     color: var(--text-color);
     border-color: var(--primary);
@@ -72,7 +73,7 @@
     }
 }
 
-.outline {
+.css .outline {
     color: var(--primary) !important;
     border-color: currentColor;
 
@@ -82,7 +83,7 @@
     }
 }
 
-.text {
+.css .text {
     background-color: transparent;
     &:hover {
         text-decoration: underline;
@@ -91,13 +92,13 @@
 
 // Button sizes
 
-.small {
+.css .small {
     min-width: 100px;
     padding: 6px 8px;
     height: 36px;
 }
 
-.large {
+.css .large {
     padding: 14px 16px;
     min-width: 136px;
     width: 100%;

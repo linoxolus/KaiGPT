@@ -6,22 +6,24 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const chatMenu = [
+const chatMenu = (setIsSidebarOpen) => [
     {
         icon: <FontAwesomeIcon icon={faMagnifyingGlass} />,
-        onClick: '',
+        onClick: () => {},
     },
     {
         icon: <FontAwesomeIcon icon={faPhone} />,
-        onClick: '',
+        onClick: () => {},
     },
     {
         icon: <FontAwesomeIcon icon={faVideo} />,
-        onClick: '',
+        onClick: () => {},
     },
     {
         icon: <FontAwesomeIcon icon={faEllipsisVertical} />,
-        onClick: '',
+        onClick: () => {
+            setIsSidebarOpen(true);
+        },
     },
 ];
 
