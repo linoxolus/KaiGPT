@@ -1,15 +1,13 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { memo } from 'react';
 
+import config from '~/config';
 import styles from './Dockbar.module.scss';
 import DockItem from './DockItem';
-import config from '~/config';
 
 const cx = classNames.bind(styles);
 
 function Dockbar() {
-    const [activeTab, setActiveTab] = useState(1);
-
     return (
         <div className={cx('wrapper')}>
             <div className={cx('dock-menu')}>
@@ -20,10 +18,6 @@ function Dockbar() {
                         key={index}
                         to={dock.to}
                         href={dock.href}
-                        onClick={() => {
-                            setActiveTab(index);
-                        }}
-                        active={index === activeTab}
                     />
                 ))}
             </div>
@@ -31,4 +25,4 @@ function Dockbar() {
     );
 }
 
-export default Dockbar;
+export default memo(Dockbar);

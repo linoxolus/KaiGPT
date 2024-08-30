@@ -4,10 +4,15 @@ import styles from './Message.module.scss';
 
 const cx = classNames.bind(styles);
 
-function MessageItem({ data }) {
+function MessageItem({ data, username }) {
     const timestamp = Date.parse(data.timestamp);
     return (
-        <div className={cx('message-item', 'bubble', 'left')}>
+        <div
+            className={cx('message-item', 'bubble', {
+                left: !(data.username === username),
+                right: data.username === username,
+            })}
+        >
             <div className={cx('header')}>
                 <div className={cx('username')}>{data.username}</div>
             </div>

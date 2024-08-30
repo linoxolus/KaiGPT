@@ -5,6 +5,6 @@ const routes = {
     whisper: '/whisper',
     account: '/account',
     settings: '/settings',
-}
+};
 
 export default routes;

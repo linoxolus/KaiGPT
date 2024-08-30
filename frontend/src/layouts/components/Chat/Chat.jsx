@@ -15,6 +15,7 @@ import styles from './Chat.module.scss';
 
 const cx = classNames.bind(styles);
 const data = messageAPI.conversation[12340].messages;
+const username = messageAPI.username;
 
 function Chat() {
     const [messageValue, setMessageValue] = useState('');
@@ -41,7 +42,7 @@ function Chat() {
             </header>
             <div className={cx('container')}>
                 {data.map((item, index) => {
-                    return <Message data={item} key={item.id} />;
+                    return <Message data={item} username={username} key={item.id} />;
                 })}
             </div>
             <footer className={cx('footer')}>

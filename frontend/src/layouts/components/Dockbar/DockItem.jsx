@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Dockbar.module.scss';
 import Image from '~/components/Image/Image';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -12,40 +12,25 @@ function DockItem({
     separate,
     className,
     to,
-    href,
     disabled,
-    active,
     ...passProps
 }) {
-    let Comp = 'button';
-    const classes = ['dock-item', { separate, active, [className]: className }];
-    const props = {
-        ...passProps,
-    };
-
-    if (to) {
-        Comp = Link;
-        props.to = to;
-    }
-
-    if (href) {
-        Comp = 'a';
-        props.href = href;
-    }
+    const getActiveClass = ({ isActive }) =>
+        cx('dock-item', { separate, [className]: className, active: isActive });
 
     if (disabled) {
-        Object.keys(props).forEach((key) => {
-            if (key.startsWith('on') && typeof props[key] === 'function') {
-                delete props[key];
+        Object.keys(passProps).forEach((key) => {
+            if (key.startsWith('on') && typeof passProps[key] === 'function') {
+                delete passProps[key];
             }
         });
     }
 
     return (
-        <Comp className={cx(classes)} {...props}>
+        <NavLink to={to} className={getActiveClass} {...passProps}>
             {icon ? icon : <Image src={image} alt="Icon" />}
             <span>{title}</span>
-        </Comp>
+        </NavLink>
     );
 }
 

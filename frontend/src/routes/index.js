@@ -8,28 +8,24 @@ const publicRoutes = [
         component: '',
     },
     {
-        path: config.routes.home,
-        component: '',
-    },
-    {
-        path: config.routes.chat,
+        path: config.routes.chat + '/*',
         component: <Chat />,
         layout: ChatLayout,
     },
     {
-        path: config.routes.tts,
+        path: config.routes.tts + '/*',
         component: '',
     },
     {
-        path: config.routes.whisper,
+        path: config.routes.whisper + '/*',
         component: '',
     },
     {
-        path: config.routes.account,
+        path: config.routes.account + '/*',
         component: '',
     },
     {
-        path: config.routes.settings,
+        path: config.routes.settings + '/*',
         component: '',
     },
 ];
