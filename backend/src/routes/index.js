@@ -1,7 +1,13 @@
-const chatRouter = require('./chat.route')
+const router = require('express').Router();
+const chatRouter = require('./chat.route');
+
+function setupRoute() {
+    router.use('/chat', chatRouter);
+}
 
 function route(app) {
-    app.use('/chat',chatRouter)
+    setupRoute();
+    app.use('/API', router);
 }
 
 module.exports = route;

@@ -21,17 +21,20 @@
 
 }
 
+.container {
+}
+
 .message-item {
     background: var(--active-background);
     overflow: hidden;
     padding: var(--padding-size);
-    max-width: 100%;
+    width: fit-content;
 
     // Chat bubble using Mask CSS copy from internet
     &.bubble {
         --r: 0.8em; /* the radius */
         --t: 1em; /* the size of the tail */
-        max-width: 300px;
+        max-width: 600px;
         padding: 1em;
         border-inline: var(--t) solid #0000;
         border-radius: calc(var(--r) + var(--t)) / var(--r);

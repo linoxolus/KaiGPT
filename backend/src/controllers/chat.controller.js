@@ -1,11 +1,4 @@
-const dotenv = require('dotenv');
-dotenv.config();
-
-const { GoogleGenerativeAI } = require('@google/generative-ai');
-const geminiAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
-const gemini = geminiAI.getGenerativeModel({
-    model: 'gemini-1.5-flash',
-});
+const gemini = require('../utils/gemini');
 
 class chatController {
     index(req, res) {
@@ -13,9 +6,18 @@ class chatController {
     }
 
     async ask(req, res) {
+        const AI = gemini();
         try {
-            const result = await gemini.generateContent(req.query.prompt);
+            const result = await AI.generateContent(req.query.prompt);
             res.send(result);
+        } catch (error) {
+            res.send(error);
+        }
+    }
+
+    async askStream(req, res) {
+        const AI = gemini();
+        try {
         } catch (error) {
             res.send(error);
         }
